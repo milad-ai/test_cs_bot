@@ -4,11 +4,9 @@ import psycopg2
 from psycopg2 import Error
 from datetime import datetime, timedelta
 import os
-from dotenv import load_dotenv
 from functools import wraps
 
 
-load_dotenv()
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 DB_URI = os.environ.get("DB_URI")
@@ -725,4 +723,5 @@ def back_to_main_menu(message):
 if __name__ == '__main__':
     create_tables()
     print("Running .....")
+
     bot.polling(none_stop=True)
